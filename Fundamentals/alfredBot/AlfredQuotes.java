@@ -27,7 +27,7 @@ class AlfredQuotes {
         }
     }
 
-    public String alfredYell(String pharse){
-        return pharse;
+    public String alfredYell(String phrase){
+        return phrase;
     }
 }
