@@ -1,7 +1,6 @@
 import java.util.Date;
 
 
-
 class AlfredQuotes {
     public String basicGreeting(){
         return "Hello, lovely to see you. How are you?";
@@ -13,7 +12,7 @@ class AlfredQuotes {
 
     public String dateAnnouncement(){
         Date date = new Date();
-        return "It is currently: " + date;
+        return ""+ date;
     }
 
     public String respondBeforeAlexis(String conversation){
