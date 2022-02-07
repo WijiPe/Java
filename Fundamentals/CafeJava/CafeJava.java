@@ -36,5 +36,4 @@ public class CafeJava {
 
         System.out.println(displayTotalMessage + (lattePrice - dripCoffeePrice));
     }
-   
 }
