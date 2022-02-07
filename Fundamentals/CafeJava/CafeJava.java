@@ -9,7 +9,6 @@ public class CafeJava {
         double dripCoffeePrice = 4.5;
         double lattePrice = 5.5;
         double cappuccinoPrice = 6.5;
-        double total = lattePrice*2;
         String customer1 = "Cindhuri";
         String customer2 = "Sam";
         String customer3 = "Jimmy";
@@ -30,11 +29,12 @@ public class CafeJava {
         }
         if(isreadyOrder3){
             System.out.println(customer2 + readyMessage);
-            System.out.println(displayTotalMessage + total);
+            System.out.println(displayTotalMessage + lattePrice*2);
         }else{
             System.out.println(customer2 + pendingMessage);
         }
-        
+
+        System.out.println(displayTotalMessage + (lattePrice - dripCoffeePrice));
     }
    
 }
