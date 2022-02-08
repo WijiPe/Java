@@ -28,12 +28,26 @@ public class TestCafe {
         menu.add("mocha");
         appTest.displayMenu(menu);
     
-        System.out.println("\n----- Add Customer Test-----");
-        ArrayList<String> customers = new ArrayList<String>();
-        // --- Test 4 times ---
-        for (int i = 0; i < 4; i++) {
-            appTest.addCustomer(customers);
-            System.out.println("\n");
-        }
+        // System.out.println("\n----- Add Customer Test-----");
+        // ArrayList<String> customers = new ArrayList<String>();
+        // // --- Test 4 times ---
+        // for (int i = 0; i < 4; i++) {
+        //     appTest.addCustomer(customers);
+        //     System.out.println("\n");
+        // }
+
+        // appTest.printPriceChart("Columbia Coffee Grounds", 15, 3);
+        // appTest.printPriceChart("Columbia Coffee Grounds", 2, 4);
+
+        ArrayList<Double> prices = new ArrayList<Double>();
+        prices.add(1.5);
+        prices.add(3.5);
+        prices.add(4.5);
+        prices.add(3.5);
+        appTest.displayMenu(menu, prices);
+        
+        boolean displayStatus = appTest.displayMenu(menu, prices);
+        System.out.println(displayStatus);
+
     }
 }
