@@ -14,7 +14,9 @@ public class BankAccount{
         saving = savingParam;
         numberOfAccount++;
         amountOfMoney = checking+saving;
+        this.accountNumber = getAccountNumber();
     }
+
 
     public String getAccountName(){
         return this.accountName;
@@ -73,12 +75,7 @@ public class BankAccount{
         for (int i = 1; i <=10; i++) {
             accountNumber += rand.nextInt(10) + 1;
         }
-
         return accountNumber;
     }
 
-    public BankAccount() {
-        numberOfAccount++;
-        this.accountNumber = getAccountNumber();
-    }
 }
