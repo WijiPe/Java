@@ -16,6 +16,5 @@ public class Gorilla extends Mammal {
 		super.setEnergyLevel(super.getEnergyLevel()+10);
 		System.out.printf("Gorilla has climb the trees and its energy goes up to %d. \n", super.getEnergyLevel());
 	}
-	
-	
+
 }

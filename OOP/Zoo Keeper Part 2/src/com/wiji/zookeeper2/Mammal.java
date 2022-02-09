@@ -1,4 +1,4 @@
-package com.wiji.zookeeper1;
+package com.wiji.zookeeper2;
 
 public class Mammal {
 	private int energyLevel;
@@ -19,5 +19,3 @@ public class Mammal {
 		this.energyLevel = energyLevel;
 	}
 }
-
-
