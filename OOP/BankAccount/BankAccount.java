@@ -1,7 +1,10 @@
+import java.util.Random;
+
 public class BankAccount{
     private String accountName;
     private double checking;
     private double saving;
+    private String accountNumber;
     private static int numberOfAccount = 0;
     private static double amountOfMoney = 0;
 
@@ -11,10 +14,6 @@ public class BankAccount{
         saving = savingParam;
         numberOfAccount++;
         amountOfMoney = checking+saving;
-    }
-
-    public void setItem(ArrayList<Item> items){
-        this.items = items;
     }
 
     public String getAccountName(){
@@ -50,6 +49,7 @@ public class BankAccount{
         System.out.printf("Savinging Balance: %s\n", this.saving);
         System.out.printf("Number of Accounts: %s\n", numberOfAccount);
         System.out.printf("Amount of Money: %s\n", amountOfMoney);
+        System.out.printf("Account Number: %s\n", this.accountNumber);
     }
 
     public void withdrawMoney(double checkingParam, double savingParam){
@@ -66,4 +66,19 @@ public class BankAccount{
         amountOfMoney = this.checking+this.saving;
     }
 
+    private String getAccountNumber() {
+
+        Random rand = new Random();
+        String accountNumber ="";
+        for (int i = 1; i <=10; i++) {
+            accountNumber += rand.nextInt(10) + 1;
+        }
+
+        return accountNumber;
+    }
+
+    public BankAccount() {
+        numberOfAccount++;
+        this.accountNumber = getAccountNumber();
+    }
 }
