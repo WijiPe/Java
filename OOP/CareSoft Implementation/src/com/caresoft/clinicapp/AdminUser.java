@@ -76,7 +76,7 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPAAComplian
 	}
 
 	public boolean assignPin(int pin) {
-		if(pin>99999 && pin<=1000000){
+		if(pin>99999 && pin<1000000){
 			this.setEmployeePin(pin);
 	        return true;
 	    }

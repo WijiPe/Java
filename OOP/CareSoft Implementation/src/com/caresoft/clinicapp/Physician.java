@@ -17,7 +17,7 @@ public class Physician extends User implements HIPAACompliantUser {
 	}
 
 	public boolean assignPin(int pin) {
-		if(pin>999 && pin<=10000){
+		if(pin>999 && pin<10000){
 	        this.setUserPin(pin);
 	        return true;
 	    }
