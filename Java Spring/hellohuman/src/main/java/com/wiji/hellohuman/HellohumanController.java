@@ -10,19 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class HellohumanController {
 	
-
-//	@RequestMapping("")
-//	public String greeting() {
-//		return "Hello Human";
-//			
-//	}
-	
-	@RequestMapping("/")
-    public String index(@RequestParam(value="q", required=false) String searchQuery) {
-        if(searchQuery == null) {
-        	return "You searched for: " + "nothing";
+	@RequestMapping("")
+    public String index(@RequestParam(value="name", required=false) String name, String last_name, int times) {
+        if(name == null) {
+        	return "You searched for: nothing";
         }
-		return "You searched for: " + searchQuery;
+		return "Hello " + name + " " + last_name;
     }
 
 }
