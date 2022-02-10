@@ -25,7 +25,7 @@ public class Museum {
 		museum.add(s1);
 		museum.add(s2);
 	
-		        
+//		Collections.shuffle(museum);
 		 Random rand = new Random();
 		 for(int i = 0; i < museum.size(); i++){
 		    int randomIndex = rand.nextInt(museum.size());
