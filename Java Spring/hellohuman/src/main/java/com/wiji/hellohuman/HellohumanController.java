@@ -11,11 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class HellohumanController {
 	
 	@RequestMapping("")
-    public String index(@RequestParam(value="name", required=false) String name, String last_name, int times) {
-        if(name == null) {
-        	return "You searched for: nothing";
-        }
-		return "Hello " + name + " " + last_name;
-    }
+    public String index(
+    		@RequestParam(value="name", required=false) String name,
+    		@RequestParam(value="last_name", required=false) String last_name,
+    		@RequestParam(value="times", required=false) String times) {
+        
+		if(name != null && last_name!= null) {
+			return "Hello " + name + " " + last_name ;
+//        }else if(name != null && last_name != null && times != null ){
+//        	String greeting = "Hello" + name + " " + last_name;
+//        	String greetings = "";
+//        	for(int i =0; i < )
+//        	return 
+		}
+			return "You searched for: nothing";
+    	}
 
 }
