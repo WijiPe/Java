@@ -14,22 +14,20 @@ public class HellohumanController {
     public String index(
     		@RequestParam(value="name", required=false) String name,
     		@RequestParam(value="last_name", required=false) String last_name,
-    		@RequestParam(value="times", required=false) String times) {
+    		@RequestParam(value="times", required=false) Integer times) {
         
 		if(name != null && last_name != null && times != null ) {
         	String greeting = "Hello" + name + " " + last_name;
-        	return greeting.repeat(Integer.parseInt(times));
+        	return greeting.repeat(times);
 //        	String result = "";
 //        	
-//        	for(int i=0; i < Integer.parseInt(times); i++) {
+//        	for(int i=0; i < times; i++) {
 //        		result += greeting;
 //        	}
 //        	return result;
    
         }else if(name != null && last_name!= null){
-
         	return "Hello " + name + " " + last_name ;
-		
         }
 			return "You searched for: nothing";
     	}

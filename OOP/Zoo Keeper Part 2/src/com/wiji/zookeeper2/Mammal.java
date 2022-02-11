@@ -1,7 +1,8 @@
 package com.wiji.zookeeper2;
 
 public class Mammal {
-	private int energyLevel;
+//	private int energyLevel;
+	protected int energyLevel;
 	
 	public Mammal() {
 		this.energyLevel = 100;
@@ -11,11 +12,11 @@ public class Mammal {
 		System.out.printf("Enegry Level: %d\n", this.energyLevel);
 	}
 
-	public int getEnergyLevel() {
-		return energyLevel;
-	}
-
-	public void setEnergyLevel(int energyLevel) {
-		this.energyLevel = energyLevel;
-	}
+//	public int getEnergyLevel() {
+//		return energyLevel;
+//	}
+//
+//	public void setEnergyLevel(int energyLevel) {
+//		this.energyLevel = energyLevel;
+//	}
 }
