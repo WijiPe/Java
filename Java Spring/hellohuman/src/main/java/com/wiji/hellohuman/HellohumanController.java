@@ -16,14 +16,21 @@ public class HellohumanController {
     		@RequestParam(value="last_name", required=false) String last_name,
     		@RequestParam(value="times", required=false) String times) {
         
-		if(name != null && last_name!= null) {
-			return "Hello " + name + " " + last_name ;
-//        }else if(name != null && last_name != null && times != null ){
-//        	String greeting = "Hello" + name + " " + last_name;
-//        	String greetings = "";
-//        	for(int i =0; i < )
-//        	return 
-		}
+		if(name != null && last_name != null && times != null ) {
+        	String greeting = "Hello" + name + " " + last_name;
+        	return greeting.repeat(Integer.parseInt(times));
+//        	String result = "";
+//        	
+//        	for(int i=0; i < Integer.parseInt(times); i++) {
+//        		result += greeting;
+//        	}
+//        	return result;
+   
+        }else if(name != null && last_name!= null){
+
+        	return "Hello " + name + " " + last_name ;
+		
+        }
 			return "You searched for: nothing";
     	}
 
