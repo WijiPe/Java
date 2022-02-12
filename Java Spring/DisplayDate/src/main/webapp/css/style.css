@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+.group{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	
+}
+a{
+	color:pink;
+}
+
+.date{
+	color:green;
+}
+
+.time{
+	color:blue;
+}
