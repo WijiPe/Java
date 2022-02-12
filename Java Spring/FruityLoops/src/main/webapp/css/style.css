@@ -1,0 +1,8 @@
+@charset "ISO-8859-1";
+
+.box{
+	width: 500px;
+    height: 300px;
+    border: solid 5px pink;
+    margin: 0px auto;
+}
