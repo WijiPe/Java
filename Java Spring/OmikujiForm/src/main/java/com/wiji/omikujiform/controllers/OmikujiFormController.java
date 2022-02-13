@@ -2,12 +2,14 @@ package com.wiji.omikujiform.controllers;
 
 
 import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
+@Controller
 public class OmikujiFormController {
 	
 	@GetMapping("/omikuji")
@@ -15,7 +17,7 @@ public class OmikujiFormController {
 		return "home.jsp";
 	}
 	
-	@GetMapping("/submitForm")
+	@PostMapping("/submitForm")
 	public String submit(HttpSession session,
 		@RequestParam(value="number", defaultValue = "1") Integer number,
 	    @RequestParam(value="city", defaultValue = "Seattle") String city,
