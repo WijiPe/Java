@@ -23,7 +23,7 @@ public class OmikujiFormController {
 	    @RequestParam(value="city", defaultValue = "Seattle") String city,
 	    @RequestParam(value="famousName", defaultValue = "Michael Jackson") String famousName,
 	    @RequestParam(value="hobby", defaultValue = "dancing moonwalk") String hobby,
-	    @RequestParam(value="setSomethingLiving", defaultValue = "aliens") String somethingLiving,
+	    @RequestParam(value="somethingLiving", defaultValue = "aliens") String somethingLiving,
 	    @RequestParam(value="quote", defaultValue = "you need to answer the form") String quote) {
 	    		
 	    	if(number != null && city != null && famousName !=null && hobby != null
