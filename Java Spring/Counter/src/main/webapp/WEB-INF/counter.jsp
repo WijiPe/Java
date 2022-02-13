@@ -13,6 +13,6 @@
 	<h2><a href="http://localhost:8080/your_server">Test another visit?</a></h2>
 	<h2>You have visited ""http://localhost:8080/your_server/counter/counter2" ${count2}/2 times.</h2>
 	<h2><a href="http://localhost:8080/your_server/counter/counter2">Test another visit?</a></h2>
-	<a href="http://localhost:8080/your_server/counter/reset"><button class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off">reset the count</button></a>
+	<a href="http://localhost:8080/your_server/counter/reset"><button class="btn btn-outline-primary" >reset the count</button></a>
 </body>
 </html>

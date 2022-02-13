@@ -1,13 +1,13 @@
-package com.wiji.daikichi;
+package com.wiji.omikujiform;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DaikichiroutesApplication {
+public class OmikujiFormApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DaikichiroutesApplication.class, args);
+		SpringApplication.run(OmikujiFormApplication.class, args);
 	}
 
 }

@@ -1,10 +1,10 @@
-package com.wiji.daikichi;
+package com.wiji.omikujiform;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DaikichiroutesApplicationTests {
+class OmikujiFormApplicationTests {
 
 	@Test
 	void contextLoads() {

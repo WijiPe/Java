@@ -18,12 +18,12 @@ public class CounterController {
 		return "index.jsp";
 	}
 	
-	@GetMapping("your_server/counter")
+	@GetMapping("/your_server/counter")
 	public String count() {		
 		return "counter.jsp";
 	}
 	
-	@GetMapping("your_server/counter/counter2")
+	@GetMapping("/your_server/counter/counter2")
 	public String count2(HttpSession session) {
 		if(session.getAttribute("count2")==null) {
 			session.setAttribute("count2", 0);
@@ -34,7 +34,7 @@ public class CounterController {
 		return "count2.jsp";
 	}
 	
-	@GetMapping("your_server/counter/reset")
+	@GetMapping("/your_server/counter/reset")
 	public String reset(HttpSession session) {
 		session.setAttribute("count2", 0);
 		session.setAttribute("count", 0);
