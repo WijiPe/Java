@@ -87,4 +87,24 @@ public class DLL {
     	}return number;
     		
     }
+    
+    public void insertAt(Node newNode, int index) {
+    	if(this.head != null){
+    		if(index == 0) {
+    			newNode.next = this.head;
+    			this.head = newNode;
+        	}Node runner = head;
+    		for(var i = 0; i<index-1; i++) {
+    			runner = runner.next;
+    			if(runner.next == null) {
+    				return;
+    			}	
+    		}
+    			newNode.next = runner.next;
+    			runner.next = newNode;
+    	}
+    }
+    public void removeAt(int index) {
+    	
+    }
 }

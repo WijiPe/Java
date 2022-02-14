@@ -21,12 +21,15 @@ public class DLLTest {
 //        dll.printValuesBackward();
 //        dll.pop();
 //        dll.printValuesForward();
-        dll.contains(50);
-        System.out.println(dll.contains(50));
-        dll.contains(1);
-        System.out.println(dll.contains(1));
-        dll.size();
-        System.out.println(dll.size());
+//        dll.contains(50);
+//        System.out.println(dll.contains(50));
+//        dll.contains(1);
+//        System.out.println(dll.contains(1));
+//        dll.size();
+//        System.out.println(dll.size());
+        
+        dll.insertAt(new Node(900), 1);
+        dll.printValuesForward();
     }
 }
 
