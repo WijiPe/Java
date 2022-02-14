@@ -56,7 +56,26 @@ public class SinglyLinkedList {
         			 System.out.println(runner.next.value);
         		 }runner = runner.next;
         	 }
-        }
+    }
+    
+    public void removeAt(int index){
+        if(this.head != null){
+        	Node runner = head;
+        	if(index == 0) {
+        		head = head.next;
+        		return;
+        	}
+        	Node previous = null;
+        	for(var i = 0; i <index; i++) {
+        		previous = runner;
+        		runner = runner.next;
+        		if(runner == null) {
+        			return;
+        		}
+        	}
+        		previous.next = runner.next;
+        	}
+    }
 }
 
 

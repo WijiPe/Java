@@ -11,8 +11,9 @@ public class ListTester {
         sll.add(2);
         sll.remove();
         sll.remove();
-        sll.printValues();
         sll.find(3);
+        sll.removeAt(2);
+        sll.printValues();
     }
 }
 
