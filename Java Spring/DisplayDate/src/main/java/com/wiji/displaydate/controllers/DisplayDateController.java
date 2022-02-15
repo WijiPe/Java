@@ -21,6 +21,7 @@ public class DisplayDateController {
 	@GetMapping("/time")
 	public String time(Model model) {
 		String time = LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm a"));
+//		@DateTimeFormat(pattern="HH:mm a");
 		
 		model.addAttribute("time", time);
 		

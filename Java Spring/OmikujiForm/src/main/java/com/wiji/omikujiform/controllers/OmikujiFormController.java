@@ -46,6 +46,15 @@ public class OmikujiFormController {
 	
 	@GetMapping("/omikuji/show")
 	public String display() {
+		
+//		public String display(HttpSession session, Model model) {	
+//		model.addAttribute("number", session.getAttribute("number"));
+//		model.addAttribute("city", session.getAttribute("city"));
+//		model.addAttribute("famousName", session.getAttribute("famousName"));
+//		model.addAttribute("hobby", session.getAttribute("hobby"));
+//		model.addAttribute("somethingLiving", session.getAttribute("somethingLiving"));
+//		model.addAttribute("quote", session.getAttribute("quote"));	
+
 
 		return "display.jsp";
 	}
