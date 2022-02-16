@@ -1,7 +1,7 @@
 package com.wiji.renderingbooks.controllers;
 
 
-
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,12 +17,12 @@ public class BookControllers {
 	@Autowired
 	private BookService bookService;
 	
-//	@GetMapping("/books")
-//	public String dashboard(Model model) {
-//		List<Book> books = bookService.allBooks();
-//		model.addAttribute("books", books);
-//		return "dashboard.jsp";
-//	}
+	@GetMapping("/books")
+	public String dashboard(Model model) {
+		List<Book> books = bookService.allBooks();
+		model.addAttribute("books", books);
+		return "index.jsp";
+	}
 	
 	@GetMapping("/books/{id}")
 	public String showOneIcecream(@PathVariable("id")Long id, Model model) {
