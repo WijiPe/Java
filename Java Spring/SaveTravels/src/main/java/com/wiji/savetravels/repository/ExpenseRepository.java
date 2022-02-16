@@ -9,9 +9,9 @@ public interface ExpenseRepository extends CrudRepository<Expense, Long> {
 		
 		List<Expense> findAll();
 
-		List<Expense> findByVendorContaining(String search);
-
-	   Long countByExpenseContaining(String search);
-
-	   Long deleteByExpenseStartingWith(String search);
+//		List<Expense> findByVendorContaining(String search);
+//
+//	   Long countByExpenseContaining(String search);
+//
+//	   Long deleteByExpenseStartingWith(String search);
 }

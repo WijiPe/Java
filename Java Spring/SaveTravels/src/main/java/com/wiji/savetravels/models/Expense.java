@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
@@ -32,7 +31,7 @@ public class Expense {
 	    private String vendor;
 	    @NotNull
 	    @Positive(message="Amount must be at greater than 0.")
-	    private double amount;
+	    private Double amount;
 	    @NotNull
 	    @Size(min = 5, max = 200, message="Description must be at least 5 characters.")
 	    private String description;
@@ -45,8 +44,7 @@ public class Expense {
 	    
 		public Expense() {}
 	    
-	    public Expense( String expense, String vendor, double amount, String description) {
-			super();
+	    public Expense( String expense, String vendor, Double amount, String description) {
 			this.expense = expense;
 			this.vendor = vendor;
 			this.amount = amount;
@@ -86,11 +84,11 @@ public class Expense {
 			this.vendor = vendor;
 		}
 
-		public double getAmount() {
+		public Double getAmount() {
 			return amount;
 		}
 
-		public void setAmount(double amount) {
+		public void setAmount(Double amount) {
 			this.amount = amount;
 		}
 
