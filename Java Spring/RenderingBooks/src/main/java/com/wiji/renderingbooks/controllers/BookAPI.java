@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.wiji.renderingbooks.models.Book;
 import com.wiji.renderingbooks.services.BookService;
 
-
-
 @RestController
 public class BookAPI {
 

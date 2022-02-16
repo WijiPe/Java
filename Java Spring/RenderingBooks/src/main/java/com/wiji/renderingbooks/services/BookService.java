@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 import com.wiji.renderingbooks.models.Book;
 import com.wiji.renderingbooks.repository.BookRepository;
 
-
-
-
 @Service
 public class BookService {
  // adding the book repository as a dependency
