@@ -1,21 +1,20 @@
-package com.wiji.bookapi.controllers;
-
+package com.wiji.renderingbooks.controllers;
 
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wiji.bookapi.models.BookModel;
-import com.wiji.bookapi.services.BookService;
+import com.wiji.renderingbooks.models.Book;
+import com.wiji.renderingbooks.services.BookService;
+
+
 
 @RestController
 public class BookAPI {
@@ -26,42 +25,42 @@ public class BookAPI {
 	    }
 	    
 		@GetMapping("/api/books")
-		public List<BookModel> index() {
+		public List<Book> index() {
 			return bookService.allBooks();
 		}
 	    
 	    @PostMapping("/api/books")
-		public BookModel createBook(
+		public Book createBook(
 				@RequestParam("title")String title,
-				@RequestParam("description")String desc,
-				@RequestParam("language") String lang,
-				@RequestParam("pages") Integer numOfPages
+				@RequestParam("description")String description,
+				@RequestParam("language") String language,
+				@RequestParam("numberOfPages") Integer numberOfPages
 				
 				) {
 	    	
-	    	BookModel book  = new BookModel(title, desc, lang, numOfPages);
+	    	Book book  = new Book(title, description, language, numberOfPages);
 			return bookService.createBook(book);
 		}
 	    // other methods removed for brevity
 	    @PutMapping("/api/books/{id}")
-	    public BookModel update(
+	    public Book update(
 	    		@PathVariable("id") Long id, 
 	    		@RequestParam("title") String title, 
-	    		@RequestParam("description") String desc, 
-	    		@RequestParam("language") String lang,
-	    		@RequestParam("pages") Integer numOfPages) {
+	    		@RequestParam("description") String description, 
+	    		@RequestParam("language") String language,
+	    		@RequestParam("numberOfPages") Integer numberOfPages) {
 	    	
-	    	BookModel book = bookService.findBook(id);
+	    	Book book = bookService.findBook(id);
 	    	book.setTitle(title);
-	    	book.setDescription(desc);
-	    	book.setLanguage(lang);
-	    	book.setNumberOfPages(numOfPages);
+	    	book.setDescription(description);
+	    	book.setLanguage(language);
+	    	book.setNumberOfPages(numberOfPages);
 	        return bookService.updateBook(book);
 	    }
 	    
 	    @GetMapping("/api/books/{id}")
-		public BookModel show(@PathVariable("id") Long id) {
-	    	BookModel book = bookService.findBook(id);
+		public Book show(@PathVariable("id") Long id) {
+	    	Book book = bookService.findBook(id);
 			return book;
 		}
 	    
@@ -69,6 +68,4 @@ public class BookAPI {
 	    public void delete(@PathVariable("id") Long id) {
 	        bookService.deleteBook(id);
 	    }
-
-
 }

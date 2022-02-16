@@ -1,4 +1,4 @@
-package com.wiji.bookapi.models;
+package com.wiji.renderingbooks.models;
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -17,9 +17,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="books")
-public class BookModel {
+public class Book {
 	
-    public BookModel( String title, String description,String language, Integer numberOfPages) {
+    public Book( String title, String description,String language, Integer numberOfPages) {
 		super();
 		this.title = title;
 		this.description = description;
@@ -90,15 +90,9 @@ public class BookModel {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    public BookModel() {
+    public Book() {
     }
-    public BookModel(String title, String description, String lang, int pages) {
-        this.title = title;
-        this.description = description;
-        this.language = lang;
-        this.numberOfPages = pages;
-    }
-    
+
     // other getters and setters removed for brevity
     @PrePersist
     protected void onCreate(){
