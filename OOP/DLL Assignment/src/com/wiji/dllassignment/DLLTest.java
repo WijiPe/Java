@@ -10,12 +10,19 @@ public class DLLTest {
         Node n5 = new Node(80);
         Node n6 = new Node(100);
         
-        dll.push(n1);
-        dll.push(n2);
-        dll.push(n3);
-        dll.push(n4);
-        dll.push(n5);
-        dll.push(n6);
+//        dll.push(n1);
+//        dll.push(n2);
+//        dll.push(n3);
+//        dll.push(n4);
+//        dll.push(n5);
+//        dll.push(n6);
+        
+        dll.push(new Node(10));
+        dll.push(new Node(20));
+        dll.push(new Node(30));
+        dll.push(new Node(30));
+        dll.push(new Node(20));
+        dll.push(new Node(10));
         
         
 //        dll.printValuesBackward();
@@ -28,8 +35,12 @@ public class DLLTest {
 //        dll.size();
 //        System.out.println(dll.size());
         
-        dll.insertAt(new Node(900), 1);
+//        dll.insertAt(new Node(900), 1);
+//        dll.printValuesForward();
+//        dll.removeAt(2);
         dll.printValuesForward();
+//        dll.printValuesBackward();
+        System.out.println(dll.isPalindrome());
     }
 }
 

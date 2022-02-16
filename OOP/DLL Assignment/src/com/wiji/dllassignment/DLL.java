@@ -100,11 +100,38 @@ public class DLL {
     				return;
     			}	
     		}
-    			newNode.next = runner.next;
-    			runner.next = newNode;
+    		newNode.next = runner.next;
+    		runner.next = newNode;
     	}
     }
     public void removeAt(int index) {
-    	
+    	if(this.head != null){
+    		if(index == 0) {
+    			this.head = null;
+    		}Node runner = head;
+    		for(var i = 0; i<index-1; i++) {
+    			runner = runner.next;
+    			if(runner.next == null) {
+    				return;
+    			}else{
+    				runner.next = runner.next.next;
+    			}
+    		}
+    	}
+    }
+    public boolean isPalindrome() {
+    	 if(this.head != null) {
+    	    Node current1 = this.tail;
+    	    Node current2 = this.head;
+    	    while(current1 != null && current2 != null) {
+    			if(current1.value != current2.value) {
+    				return false;
+    			}    			
+    			current1= current1.previous;
+    			current2= current2.next;
+    	    }
+    	    return true;	
+    	 }
+    	 return false;
     }
 }
