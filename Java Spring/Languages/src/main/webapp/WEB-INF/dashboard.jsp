@@ -11,7 +11,7 @@
 <title>Home</title>
 </head>
 <body>
-<table class="table">
+	<table class="table">
   		<thead>
     		<tr>
       			<th scope="col">Name</th>
@@ -24,10 +24,10 @@
   		<tbody>
   		<c:forEach var="l" items="${languages}">
     		<tr  class="table-light">
-      			<td><a href="/lanuages/${l.id}">${l.name}</a></td>
+      			<td><a href="/languages/${l.id}">${l.name}</a></td>
       			<td>${l.creator}</td>
       			<td>${l.version}</td>
-      			<td><a href="/lanuages/edit/${l.id}">edit</a></td>
+      			<td><a href="/languages/edit/${l.id}">edit</a></td>
       			<td>
       				<form action="/languages/delete/${l.id}" method="post">
       					<input type="hidden" name="_method" value="delete" />

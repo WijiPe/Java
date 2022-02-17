@@ -12,7 +12,7 @@
 	<h2>${language.name}</h2>
 	<h2>${language.creator}</h2>
 	<h2>${language.version}</h2>
-	<h2><a href="/lanuages/edit/${language.id}">edit</a></h2>
+	<h2><a href="/languages/edit/${language.id}">edit</a></h2>
 	<form action="/languages/delete/${language.id}" method="post">
       	<input type="hidden" name="_method" value="delete" />
       	<button> Delete </button>

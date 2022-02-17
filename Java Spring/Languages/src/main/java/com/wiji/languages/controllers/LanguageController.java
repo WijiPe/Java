@@ -19,8 +19,6 @@ import com.wiji.languages.models.Language;
 import com.wiji.languages.services.LanguageService;
 
 
-
-
 @Controller
 public class LanguageController {
 
@@ -47,14 +45,14 @@ public class LanguageController {
 		}
 	}
 	
-	@GetMapping("/lanuages/{id}")
+	@GetMapping("/languages/{id}")
 	public String showOneLanguage(@PathVariable("id")Long id, Model model) {
 		Language language = languageService.findLanguage(id);
 		model.addAttribute("language", language);
 		return "details.jsp";
 	}
 	
-	@GetMapping("/lanuages/edit/{id}")
+	@GetMapping("/languages/edit/{id}")
 	public String editForm(@PathVariable("id")Long id, Model model) {
 		Language language = languageService.findLanguage(id);
 		model.addAttribute("language", language);
