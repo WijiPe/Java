@@ -20,6 +20,7 @@
       			<th scope="col">Vendor</th>
       			<th scope="col">Amount</th>
       			<th scope="col">Actions</th>
+      			<th scope="col"></th>
     		</tr>
   		</thead>
   		<tbody>
@@ -29,6 +30,12 @@
       			<td>${e.vendor}</td>
       			<td><fmt:formatNumber type="CURRENCY" value="${e.amount}"/></td>
       			<td><a href="/expenses/edit/${e.id}">edit</a></td>
+      			<td>
+      			<form action="/expenses/delete/${e.id}" method="post">
+      			<input type="hidden" name="_method" value="delete" />
+      			<button> Delete </button>
+      			</form>
+      			</td>
     		</tr>
     	</c:forEach>
   		</tbody>
@@ -57,5 +64,6 @@
     </p>    
     <input type="submit" value="Submit"/>
 	</form:form>
+	
 </body>
 </html>

@@ -11,7 +11,7 @@
 <title>Edit Form</title>
 </head>
 <body>
-	<h2>Edit an expense:</h2>
+	<h2>Edit an expense:</h2><a href="/expenses">Go Back</a>
 	<form:form action="/expenses/edit/${expenseModel.id}" method="post" modelAttribute="expenseModel">
 	<input type="hidden" name="_method" value="put" />
     <p>
