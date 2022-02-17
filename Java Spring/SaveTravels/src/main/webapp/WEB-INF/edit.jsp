@@ -26,7 +26,7 @@
     </p>
     <p>
         <form:label path="amount">Amount:</form:label>
-        <form:errors path="amount"/>
+        <form:errors type="number" step="0.01" path="amount"/>
         <form:input path="amount"/>
     </p>
     <p>

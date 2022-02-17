@@ -25,7 +25,7 @@ public class BookControllers {
 	}
 	
 	@GetMapping("/books/{id}")
-	public String showOneIcecream(@PathVariable("id")Long id, Model model) {
+	public String showOneBook(@PathVariable("id")Long id, Model model) {
 		Book book = bookService.findBook(id);
 		model.addAttribute("book", book);
 		return "show.jsp";
