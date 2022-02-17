@@ -88,13 +88,23 @@ public class SongController {
 		model.addAttribute("songs", songs);
 		return "topten.jsp";
 	}
-	@PostMapping("/songs/search")
-	public String searchQuery(@RequestParam("keyword") String keyword) {
-		return "redirect:/songs/search/"+keyword;
-	}
 	
-	@GetMapping("/songs/search/{keyword}")
-	public String showSongsByArtist(@PathVariable("keyword")String keyword, Model model) {
+//	Option for get keyword
+	
+//	@PostMapping("/songs/search")
+//	public String searchQuery(@RequestParam("keyword") String keyword) {
+//		return "redirect:/songs/search/"+keyword;
+//	}
+//	
+//	@GetMapping("/songs/search/{keyword}")
+//	public String showSongsByArtist(@PathVariable("keyword")String keyword, Model model) {
+//		List<Song> songs = songService.searchArtist(keyword);
+//		model.addAttribute("songs", songs);
+//		return "search.jsp";
+//	}
+	
+	@GetMapping("/songs/search")
+	public String showSongsByArtist2(@RequestParam("keyword")String keyword, Model model) {
 		List<Song> songs = songService.searchArtist(keyword);
 		model.addAttribute("songs", songs);
 		return "search.jsp";

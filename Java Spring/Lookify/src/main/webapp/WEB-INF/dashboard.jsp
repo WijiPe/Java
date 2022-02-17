@@ -14,7 +14,7 @@
 <body>
 	<p><a href="/songs/new">Add New</a></p>
 	<p><a href="/songs/topten">Top Song</a></p>
-	<form action="/songs/search" method="post">
+	<form action="/songs/search" method="get">
 		<input type="search" name="keyword" />
 		<button>Search</button>
 	</form>
