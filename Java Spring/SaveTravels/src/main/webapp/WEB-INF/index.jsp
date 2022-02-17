@@ -26,7 +26,7 @@
   		<tbody>
   		<c:forEach var="e" items="${expenses}">
     		<tr  class="table-light">
-      			<td>${e.expense}</td>
+      			<td><a href="/expenses/${e.id}">${e.expense}</a></td>
       			<td>${e.vendor}</td>
       			<td><fmt:formatNumber type="CURRENCY" value="${e.amount}"/></td>
       			<td><a href="/expenses/edit/${e.id}">edit</a></td>

@@ -67,4 +67,11 @@ public class HomeController {
 			expenseService.deleteExpense(id);
 			return "redirect:/expenses";
 		}
+		
+		@GetMapping("/expenses/{id}")
+		public String showExpense(@PathVariable("id")Long id, Model model) {
+			Expense e = expenseService.findExpense(id);
+			model.addAttribute("expenseModel", e);
+			return "details.jsp";
+		}
 }
