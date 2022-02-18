@@ -16,8 +16,6 @@ import com.wiji.dojosandninjas.models.Dojo;
 import com.wiji.dojosandninjas.models.Ninja;
 import com.wiji.dojosandninjas.services.MainService;
 
-
-
 @Controller
 public class HomeController {
 	

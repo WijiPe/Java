@@ -47,8 +47,8 @@ public class MainService {
     	}
 	}
 	
-	 public Dojo createDojo(Dojo song) {
-	     return dojoRepo.save(song);
+	 public Dojo createDojo(Dojo dojo) {
+	     return dojoRepo.save(dojo);
 	 }
 	 
 	 public Ninja createNinja(Ninja ninja) {
