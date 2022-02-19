@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.wiji.bookclub.models.Book;
 import com.wiji.bookclub.models.User;
@@ -55,6 +56,30 @@ public class BookController {
     	model.addAttribute("user", user);
     	return "bookDetails.jsp";
 	}
+	
+	@GetMapping("/books/edit/{id}")
+	public String editForm(@PathVariable("id")Long id, Model model, HttpSession session) {
+		if(session.getAttribute("userId")==null) {
+			return "redirect:/";
+		}
+		Book book = bookService.oneBook(id);
+		model.addAttribute("book", book);
+		return "edit.jsp";
+	}
+	
+	@PutMapping("/books/edit/{id}")
+	public String edit(@PathVariable("id")Long id, @Valid @ModelAttribute("book")Book book, BindingResult result,  HttpSession session) {
+		if(session.getAttribute("userId")==null) {
+			return "redirect:/";
+		}
+		if(result.hasErrors()) {
+			return "edit.jsp";
+		}else {
+			bookService.updateBook(book);
+			return "redirect:/books/"+id;
+		}
+	}
+	
 
 }
 

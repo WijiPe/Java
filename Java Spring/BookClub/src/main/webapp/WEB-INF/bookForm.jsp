@@ -20,11 +20,12 @@
 			<h1>Add a Book to Your Shelf!:</h1>
 		<div class="link">
 			<p><a href="/logout">logout</a></p>
-			<p><a href="/book">back to the shelves!</a></p>
+			<p><a href="/dashboard">back to the shelves!</a></p>
 		</div>
 	</div>
 	
 	<form:form action="/submitForm" method="post" modelAttribute="book">
+	
 	
 	<form:hidden path="reader" value="${userId}" />
 	
@@ -35,9 +36,7 @@
         	<form:errors path="bookName"/>
          </div>
     </div>
-        
-
-    <div class="row mb-3">
+   <div class="row mb-3">
         <form:label class="col-sm-2 col-form-label" path="author">Author:</form:label>
         <div class="col-sm-10">
         	<form:input path="author"/>

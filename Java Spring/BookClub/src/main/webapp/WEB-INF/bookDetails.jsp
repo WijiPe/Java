@@ -22,7 +22,7 @@
 		</div>
 		<div class="link">
 			<p><a href="/logout">logout</a></p>
-			<p><a href="/books">Back to the shelves</a></p>
+			<p><a href="/dashboard">Back to the shelves</a></p>
 		</div>
 	</div>
 		<c:choose>
@@ -30,7 +30,7 @@
         		<h2><span class="red">You</span> read <span class="purple">${book.bookName}</span> by <span class="green">${book.author}</span></h2>
     	</c:when>    
     	<c:otherwise>
-       		 <h2><span class="red">${book.reader.userName}</span>read <span class="purple">${book.bookName}</span> by <span class="green">${book.author}</span></h2>	
+       		 <h2><span class="red">${book.reader.userName}</span> read <span class="purple">${book.bookName}</span> by <span class="green">${book.author}</span></h2>	
     	</c:otherwise>
 		</c:choose>
 	
@@ -52,7 +52,7 @@
 	
 	<c:choose>
     		<c:when test="${userId==book.reader.id}">
-        	<a href="/logout" class="btn btn-dark">Edit</a>
+        	<a href="/books/edit/${book.id }" class="btn btn-dark">Edit</a>
     	</c:when>    
 	</c:choose>
 
