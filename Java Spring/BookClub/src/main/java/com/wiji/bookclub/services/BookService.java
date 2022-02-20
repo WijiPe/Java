@@ -21,9 +21,9 @@ public class BookService {
 	}
 	
 	public Book oneBook(Long id) {
-		Optional<Book> optionalGift = bookRepository.findById(id);
-		if(optionalGift.isPresent()) {
-			return optionalGift.get();
+		Optional<Book> optionalBook = bookRepository.findById(id);
+		if(optionalBook.isPresent()) {
+			return optionalBook.get();
 		}else {
 			return null;
 		}
