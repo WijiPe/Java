@@ -44,15 +44,17 @@
 		</c:choose>
 	<hr>
 	<div class="box">
-		
 		<h4>${book.thoughts}</h4>
-		
 	</div>
 	<hr>
 	
 	<c:choose>
     		<c:when test="${userId==book.reader.id}">
         	<a href="/books/edit/${book.id }" class="btn btn-dark">Edit</a>
+        	<form  action="/books/delete/${book.id}" method="post">
+        		<input type="hidden" name="_method" value="delete" />
+        		<button class="btn btn-dark">delete</button>
+        	</form>
     	</c:when>    
 	</c:choose>
 

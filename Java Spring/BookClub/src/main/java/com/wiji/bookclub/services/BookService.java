@@ -41,4 +41,12 @@ public class BookService {
 		bookRepository.deleteById(id);
 	}
 	
+	public List<Book> findBooksByBorrower(){
+		return bookRepository.findByBorrowerNull();
+	}
+	
+	public List<Book> findBooksByNotBorrower(){
+		return bookRepository.findByBorrowerNotNull();
+	}
+	
 }

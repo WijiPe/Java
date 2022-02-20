@@ -24,6 +24,7 @@
 		<div class="link">
 			<p><a href="/logout">logout</a></p>
 			<p><a href="/books/new">+ Add a book to my shelf!</a></p>
+			<p><a href="/lender_dashboard">Book Broker</a></p>
 		</div>
 	</div>
 		<table class="table">

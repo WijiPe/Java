@@ -49,3 +49,11 @@ body{
 	display: flex;
 	justify-content: center;
 }
+.deletebtn{
+	display: flex;
+	flex-direction: row;
+}
+.middle{
+	display: flex;
+	align-content: center;
+}

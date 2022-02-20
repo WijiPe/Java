@@ -13,7 +13,7 @@
 <!-- For any Bootstrap that uses JS or jQuery-->
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>Dojos</title>
 </head>
 <body>
 	<h1>New Dojo</h1>
