@@ -17,6 +17,7 @@
 </head>
 <body>
 	<h1>Project Details</h1>
+	<a href="/dashboard">Back to Dashboard</a>
 	<ul class="list-group">
   		<li class="list-group-item list-group-item-action">
   		<p>Project: <c:out value="${project.projectName }"/></p>
@@ -29,5 +30,14 @@
   		</li>
 	</ul>
 	<a href="/task/${project.id}">See tasks!</a>
+		<c:choose>
+    		<c:when test="${userId==project.leader.id}">
+    			<form action="/delete/${project.id}" method="post" >
+					<input type="hidden" name="_method" value="delete" />
+					<button>delete</button>
+				</form>
+    		</c:when>    
+		</c:choose>
+	
 </body>
 </html>

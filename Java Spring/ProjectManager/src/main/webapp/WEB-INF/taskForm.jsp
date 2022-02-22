@@ -18,7 +18,7 @@
 <body>
 	<h1>Project: ${project.projectName }</h1>
 	<p>Project Lead: ${project.leader.userName }</p>
-
+	<a href="/dashboard">Back to Dashboard</a>
 	<form:form action="/task/${project.id}" method="post" modelAttribute="task">
 	
 	

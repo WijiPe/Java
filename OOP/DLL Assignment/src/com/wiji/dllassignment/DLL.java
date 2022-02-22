@@ -51,6 +51,7 @@ public class DLL {
         	}else {
         		runner.previous.next = null;
         		tail = runner.previous;
+				runner.previous  = null;
         		return runner.value;
         	}
         	

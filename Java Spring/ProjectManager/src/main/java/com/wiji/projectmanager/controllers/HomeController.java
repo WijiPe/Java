@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,12 +46,13 @@ public class HomeController {
     
     @PostMapping("/submitProjectForm")
 	public String submitForm(@Valid @ModelAttribute("project")Project project, BindingResult result, HttpSession session) {
+    	if(session.getAttribute("userId")==null) {
+    		return "redirect:/";
+    	}
 		if(result.hasErrors()) {
 			return "projectForm.jsp";
 		}else {
 			Project newProject = projectService.createProject(project);
-			User user = userService.findOneUser((Long)session.getAttribute("userId"));
-			newProject.getUsers().add(user);
 			projectService.updateProject(newProject);
 			return "redirect:/dashboard";
 		}
@@ -58,6 +60,9 @@ public class HomeController {
     
     @GetMapping("/jointeam/{id}")
     public String joinTeam(@PathVariable("id")Long id, Model model, HttpSession session) {
+    	if(session.getAttribute("userId")==null) {
+    		return "redirect:/";
+    	}
     	Project updateProject = projectService.oneProject(id);
     	User user = userService.findOneUser((Long)session.getAttribute("userId"));
     	updateProject.getUsers().add(user);
@@ -137,5 +142,14 @@ public class HomeController {
 		}
 		taskService.createTask(task);
 		return "redirect:/task/"+id;
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public String deleteProcess(@PathVariable("id")Long id, HttpSession session, Model model) {
+		if(session.getAttribute("userId")==null) {
+    		return "redirect:/";
+    	}
+		projectService.deleteProject(id);
+		return "redirect:/dashboard";
 	}
 }
