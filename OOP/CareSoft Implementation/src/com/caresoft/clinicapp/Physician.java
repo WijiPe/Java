@@ -10,7 +10,7 @@ public class Physician extends User implements HIPAACompliantUser {
 	private int userPin;
 	
 	public Physician(int id) {
-		super();
+		super(id);
 		this.patientNotes = new ArrayList<String>();
 		this.setUserId(id);
 

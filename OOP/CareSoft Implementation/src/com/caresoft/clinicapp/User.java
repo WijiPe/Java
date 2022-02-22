@@ -18,5 +18,8 @@ public class User {
 		this.pin = pin;
 	}
     
+	public User(Integer id) {
+		this.setId(id);
+	}
 
 }

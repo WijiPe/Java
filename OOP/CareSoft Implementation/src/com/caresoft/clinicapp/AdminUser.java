@@ -12,7 +12,7 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPAAComplian
     private int employeePin;
 
 	public AdminUser(Integer id, String role) {
-		super();
+		super(id);
 		this.setEmployeeID(id);
 		this.setRole(role);
 		this.securityIncidents = new ArrayList<String>();
