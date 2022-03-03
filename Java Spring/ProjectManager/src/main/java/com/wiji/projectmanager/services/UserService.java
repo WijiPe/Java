@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import com.wiji.projectmanager.models.LoginUser;
+import com.wiji.projectmanager.models.Project;
 import com.wiji.projectmanager.models.User;
 import com.wiji.projectmanager.repository.UserRepository;
 
@@ -81,6 +82,11 @@ public class UserService {
     		return null;
     	}
 	}
+	public User updateUser(User user) {
+		return userRepo.save(user);
+	}
+	
+    
 }
 
 

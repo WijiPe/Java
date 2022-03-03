@@ -53,6 +53,9 @@ public class HomeController {
 			return "projectForm.jsp";
 		}else {
 			Project newProject = projectService.createProject(project);
+			User user = userService.findOneUser((Long)session.getAttribute("userId"));
+			user.getProjects().add(newProject);
+			userService.updateUser(user);
 			projectService.updateProject(newProject);
 			return "redirect:/dashboard";
 		}
@@ -66,7 +69,9 @@ public class HomeController {
     	Project updateProject = projectService.oneProject(id);
     	User user = userService.findOneUser((Long)session.getAttribute("userId"));
     	updateProject.getUsers().add(user);
+    	user.getProjects().add(updateProject);
     	projectService.updateProject(updateProject);
+    	userService.updateUser(user);
     	return "redirect:/dashboard";
     }
     
@@ -75,7 +80,9 @@ public class HomeController {
     	Project updateProject = projectService.oneProject(id);
     	User user = userService.findOneUser((Long)session.getAttribute("userId"));
     	updateProject.getUsers().remove(user);
+    	user.getProjects().remove(updateProject);
     	projectService.updateProject(updateProject);
+    	userService.updateUser(user);
     	return "redirect:/dashboard";
     }
     
@@ -98,9 +105,10 @@ public class HomeController {
 			return "edit.jsp";
 		}else {
 			Project updateProject = projectService.oneProject(id);
-			User user = userService.findOneUser((Long)session.getAttribute("userId"));
-	    	updateProject.getUsers().add(user);
-	    	projectService.updateProject(updateProject);
+			updateProject.setProjectName(project.getProjectName());
+			updateProject.setDescription(project.getDescription());
+			updateProject.setDueDate(project.getDueDate());
+			projectService.updateProject(project);
 			return "redirect:/dashboard";
 		}
 	}

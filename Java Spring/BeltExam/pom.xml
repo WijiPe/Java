@@ -8,12 +8,12 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.wiji.bookclub</groupId>
-	<artifactId>BookClub</artifactId>
+	<groupId>com.wiji.beltexam</groupId>
+	<artifactId>BeltExam</artifactId>
 	<version>1.0.1</version>
 	<packaging>war</packaging>
-	<name>BookClub</name>
-	<description>Book Club for Spring Boot</description>
+	<name>BeltExam</name>
+	<description>Belt Exam for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -48,7 +48,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		 <dependency>
+		<dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
@@ -56,7 +56,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
-            <dependency>
+        <dependency>
             <groupId>org.mindrot</groupId>
             <artifactId>jbcrypt</artifactId>
             <version>0.4</version>
@@ -67,6 +67,11 @@
         </dependency>
         <dependency>
         	<groupId>org.webjars</groupId>
+        	<artifactId>webjars-locator</artifactId>
+        	<version>0.30</version>
+    	</dependency>
+    	<dependency>
+        	<groupId>org.webjars</groupId>
         	<artifactId>bootstrap</artifactId>
         	<version>5.0.1</version>
     	</dependency>
@@ -74,11 +79,6 @@
         	<groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
             <version>3.6.0</version>
-    	</dependency>
-        <dependency>
-        	<groupId>org.webjars</groupId>
-        	<artifactId>webjars-locator</artifactId>
-        	<version>0.30</version>
     	</dependency>
 
 	</dependencies>
